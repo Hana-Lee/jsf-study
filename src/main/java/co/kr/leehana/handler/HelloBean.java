@@ -2,6 +2,8 @@ package co.kr.leehana.handler;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
+
 import java.io.Serializable;
 
 /**
@@ -22,5 +24,9 @@ public class HelloBean implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String showWelcomPageActionListener() {
+		return "welcome_nav";
 	}
 }
