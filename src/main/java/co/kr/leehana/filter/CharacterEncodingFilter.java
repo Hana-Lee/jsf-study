@@ -14,14 +14,13 @@ import java.io.IOException;
  */
 public class CharacterEncodingFilter implements Filter {
 
-	private final String DEFAULT_ENCODING = "UTF-8";
-	private String encoding = null;
+	private String encoding = "UTF-8";
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		this.encoding = filterConfig.getInitParameter("encoding");
-		if (encoding == null || encoding.isEmpty()) {
-			encoding = DEFAULT_ENCODING;
+		final String encodingParam = filterConfig.getInitParameter("encoding");
+		if (encodingParam != null || !encodingParam.isEmpty()) {
+			encoding = encodingParam;
 		}
 	}
 
