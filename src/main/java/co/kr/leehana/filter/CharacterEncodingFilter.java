@@ -19,7 +19,7 @@ public class CharacterEncodingFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		final String encodingParam = filterConfig.getInitParameter("encoding");
-		if (encodingParam != null || !encodingParam.isEmpty()) {
+		if (encodingParam != null && !encodingParam.isEmpty()) {
 			encoding = encodingParam;
 		}
 	}
